@@ -1,0 +1,114 @@
+.group {
+	position: relative; 
+	margin-bottom: 35px;
+}
+
+input, textarea {
+	font-size: 19px;
+	padding: 10px 10px 10px 5px;
+	-webkit-appearance: none;
+	background-color: transparent;
+	display: block;
+	color: #fff;
+	width: 100%;
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid rgba(0,0,0,.2);
+	box-sizing: border-box;
+	resize: vertical;
+	height: 45px;
+}
+
+input:focus, textarea:focus { outline: none; }
+
+/* Label */
+
+label {
+	color: #171617;
+	font-size: 14px;
+	font-weight: normal;
+	position: absolute;
+	pointer-events: none;
+	/*left: 5px;*/
+	padding: 0 15px;
+	top: 10px;
+	-webkit-transition:all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+
+/* active */
+
+input:focus ~ label, input.used ~ label, textarea:focus ~ label, textarea.used ~ label  {
+	top: -20px;
+  -webkit-transform: scale(.75);
+          transform: scale(.75);
+	padding: 0;
+	font-size: 13px;
+	color: #171617;
+}
+
+
+/* Underline */
+
+.bar:after {
+	position: relative;
+	display: block;
+	width: 100%;
+}
+
+.bar:before, .bar:after {
+	content: '';
+	height: 2px; 
+	width: 0;
+	bottom: 1px; 
+	position: absolute;
+	background: #171617;
+	-webkit-transition:all 0.2s ease; 
+	transition: all 0.2s ease;
+}
+
+.bar:before { left: 50%; }
+
+.bar:after { right: 50%; }
+
+
+/* active */
+
+input:focus ~ .bar:before, input:focus ~ .bar:after ,textarea:focus ~ .bar:before, textarea:focus ~ .bar:after { width: 50%; }
+
+
+/* Highlight */
+
+.highlight {
+	position: absolute;
+	height: 60%; 
+	width: 100px;
+	top: 25%; 
+	/*right: 0;*/
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+
+/* active */
+
+input:focus ~ .highlight , textarea:focus ~ .highlight {
+	-webkit-animation: inputHighlighter 0.3s ease;
+	        animation: inputHighlighter 0.3s ease;
+}
+
+
+/* Animations */
+
+@-webkit-keyframes inputHighlighter {
+	from { background: #e2dacd; }
+	to 	{ width: 0; background: transparent; }
+}
+
+@keyframes inputHighlighter {
+	from { background: #e2dacd; }
+	to 	{ width: 0; background: transparent; }
+}
+
+

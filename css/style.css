@@ -1,0 +1,233 @@
+/*-------------------------------------------------------
+    General styles
+-------------------------------------------------------*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    overflow-x: hidden;
+    color: #333;
+}
+ul{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    height: 100%;
+}
+.transition, a{
+    transition: all 0.3s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+    -moz-transition: all 0.3s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+    -webkit-transition: all 0.3s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+    -o-transition: all 0.3s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+}
+.max_w{
+    max-width: 1120px;
+    margin: auto;
+    padding: 0 10px;
+}
+.small{
+    font-size: .8em;
+}
+.medium{
+    font-size: 1.1em;
+}
+.large{
+    font-size: 1.3em;
+}
+textarea{
+    resize: none;
+    overflow: hidden;
+}
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/*-------------------------------------------------------
+   Section one
+-------------------------------------------------------*/
+.first_sec{
+    min-height: 100vh;
+}
+/*-------------------------------------------------------
+   Section two
+-------------------------------------------------------*/
+
+/*-------------------------------------------------------
+   Section three
+-------------------------------------------------------*/
+
+/*-------------------------------------------------------
+   Section Four
+-------------------------------------------------------*/
+
+/*-------------------------------------------------------
+   Section five
+-------------------------------------------------------*/
+.fifth_sec{
+    position: relative;
+}
+.fifth_sec .sec_title{
+    color: #fff;
+    margin-bottom: 40px;
+}
+.fifth_sec .sec_title:after{
+    opacity: .3;
+}
+.fifth_sec p{
+    padding: 10px;
+}
+.contact_form{
+    padding: 0 40px;
+}
+.form_btn{
+    color: #171617;
+    position: relative;
+    width: 150px;
+    text-align: center;
+    font-weight: 300;
+    font-size: 1.3em;
+    background-color: #e2dacd;
+    padding: 10px;
+    border-radius: 50px;
+    outline: none;
+    margin: auto;
+    line-height: 1em;
+}
+.form_btn:hover{
+    background-color: #171617;
+    color: #fff;
+}
+.tf_7{
+    position: absolute;
+    left: 230px;
+    top: 20px;
+    font-size: 60px;
+    color: #555;
+    opacity: .3;
+    word-spacing: -10px;
+    pointer-events: none;
+    font-weight: bold;
+    text-align: center;
+}
+.tf_7 .num2{
+    color:#000;
+    font-size: 90px;
+    opacity: .3;
+    display: inline-block;
+    position: relative;
+    top: -15px;
+    width: 112px;
+}
+.tf_7 .num1{
+    color:#fff;
+    font-size: 70px;
+    opacity: .15;
+    display: inline-block;
+    position: relative;
+    top:20px;
+    width: 41px;
+}
+
+/*-------------------------------------------------------
+   footer
+-------------------------------------------------------*/
+footer{
+    text-align: center;
+    background: #87744c;
+    padding: 50px 20px 30px 20px;
+    position: relative;
+}
+footer .full_logo2{
+    width: 300px;
+    float: right;
+}
+footer .social{
+    position: static;
+    float: left;
+    text-align: left;
+}
+footer .social a{
+    fill: #fff;
+}
+footer .social a:hover{
+    fill: #171617;
+}
+.copyright{
+    color: #fff;
+    font-size: .7em;
+    margin: 5px 0;
+}
+
+
+/*==================================================
+#Media Queries
+================================================== */
+/* Note: Design for a width of 768px and smaller */
+@media only screen and (max-width: 768px) {
+    body{
+        font-size: 14px;
+    }
+    .first_sec .social{
+        display: none;
+    }
+    .first_sec {
+        height: auto;
+        padding: 50px 0 20px 0;
+    }
+    .loading{
+        display: none;
+    }
+    .menu_btn{
+        display: none;
+    }
+    .full_logo, .vp, .icons_bottom{
+        position: static;
+        -webkit-transform: none;
+        transform: none;
+        margin: 50px auto 0;
+    }
+    .icons_bottom .content-block{
+        margin: 5px 0;
+        border-radius: 9px;
+        text-align: center;
+        background-color: rgba(0,0,0,.1);
+    }
+    .icons_bottom .icon_header{
+        margin: 10px auto;
+    }
+    .about_img{
+        display: none;
+    }
+    .fifth_sec p {
+        text-align: center;
+    }
+    .tf_7{
+        display: none;
+    }
+    .word_sec{
+        padding: 60px 30px 10px 30px;
+    }
+
+    .icon_header.reset svg{
+        stroke-dashoffset:0;
+    }
+    .google-maps {
+        padding-bottom: 55%;
+    }
+    footer .full_logo2{
+        display: none;
+    }
+    footer .social {
+        float: none;
+        text-align: center;
+    }
+    footer{
+        padding: 20px;
+    }
+}
