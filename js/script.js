@@ -6,7 +6,7 @@
         // fixed nav-bar on scroll
         var nav = $(".navbar-fixed-top");
         $(window).scroll(function() {
-            if (nav.offset().top > 200) {
+            if (nav.offset().top > 300) {
                 nav.addClass("top-nav-expand");
                 //alert('hi');
             } else {
