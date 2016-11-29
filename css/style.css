@@ -52,6 +52,12 @@ img{
     -webkit-transition: all 0.3s cubic-bezier(0.16, 0.68, 0.43, 0.99);
     -o-transition: all 0.3s cubic-bezier(0.16, 0.68, 0.43, 0.99);
 }
+.slow{
+    transition-duration: 1.5s;
+    -moz-transition-duration: 1.5s;
+    -webkit-transition-duration: 1.5s;
+    -o-transition-duration: 1.5s;
+}
 .max_w{
     max-width: 1024px;
     margin: auto;
@@ -107,15 +113,14 @@ textarea{
 .sec_title{
     display: block;
     text-align: center;
-    padding: 20px;
-    font-family: 'Syntax LT Std' , sans-serif;
+    padding: 20px 0;
+    font-family: 'Syntax LT Std bold' , sans-serif;
     font-weight: normal;
     color: #b7d332;
     text-transform: uppercase;
     font-size: 1.75em;
 }
-.sec_title strong{
-    font-family: 'Syntax LT Std bold' , sans-serif;
+.sec_title span{
     color: #fff;
 }
 h2{
@@ -149,6 +154,20 @@ h2{
 }
 .img-block img{
     width: 100%;
+}
+.no_padd{
+    padding: 0;
+}
+.cover_img{
+    padding: 50px;
+    background: url(../img/bg/BG_3.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.text_center{
+    text-align: center;
 }
 /*-------------------------------------------------------
    Section one
@@ -235,85 +254,133 @@ aside .slogan:before{
     left: 40px;
     top: 15%;
 }
+.icons_list{
+    margin: 20px 0;
+}
+.icons_list li{
+    margin: 20px 0;
+}
+.icons_list h3{
+    text-transform: uppercase;
+    margin: 5px 0;
+    letter-spacing: .2em;
+    font-size: 1em;
+}
+.first_line_icon svg{
+    width: 60px;
+    stroke-dasharray: 320px;
+    stroke-dashoffset: 320px;
+}
+.second_line_icon svg{
+    width: 70px;
+    stroke-dasharray: 46px;
+    stroke-dashoffset: 46px;
+}
+.third_line_icon svg{
+    width: 70px;
+    stroke-dasharray: 151px;
+    stroke-dashoffset: 151px;
+}
+.animate svg{
+    stroke-dashoffset:0;
+}
+.Specialization{
+    padding-left:45px;
+}
 
 
 /*-------------------------------------------------------
    Section three
 -------------------------------------------------------*/
-
+.third_sec .BG_text{
+    right: 50px;
+    top: 100px;
+}
 /*-------------------------------------------------------
    Section Four
 -------------------------------------------------------*/
-
+.fourth_sec{
+    height: auto;
+}
+.fourth_sec .BG_text{
+    left: 50px;
+    top: 12%;
+}
+.clients_list a{
+    display: block;
+    padding: 30px 20px;
+}
+.clients_list svg{
+    fill:#959595;
+}
+.clients_list a:hover svg{
+    fill:#b6d232;
+}
 /*-------------------------------------------------------
    Section five
 -------------------------------------------------------*/
 .fifth_sec{
     position: relative;
+    background-color: #2e2e2e;
+    padding: 0;
+    height: auto;
+    min-height: 100vh;
+    z-index: 2;
+    overflow: hidden;
 }
-.fifth_sec p{
-    padding: 10px;
+.fifth_sec .flex{
+    min-height: 100vh;
+}
+.fifth_sec .cover_img{
+    padding:100px 7%;
+    height: 100%;
+    display: table;
+    width: 100%;
+}
+.fifth_sec .BG_text{
+    bottom: -45px;
+    left: 10%;
 }
 .contact_form{
-    padding: 0 40px;
+    padding: 0 20% 0 40px;
+    display: table-cell;
+    vertical-align: middle;
 }
 .form_btn{
-    color: #171617;
-    position: relative;
-    width: 150px;
-    text-align: center;
-    font-weight: 300;
-    font-size: 1.3em;
-    background-color: #e2dacd;
-    padding: 10px;
-    border-radius: 50px;
-    outline: none;
-    margin: auto;
-    line-height: 1em;
+    color: #fff;
+    border: solid 1px #fff;
+    cursor: pointer;
 }
 .form_btn:hover{
-    background-color: #171617;
-    color: #fff;
 }
-.tf_7{
-    position: absolute;
-    left: 230px;
-    top: 20px;
-    font-size: 60px;
-    color: #555;
-    opacity: .3;
-    word-spacing: -10px;
-    pointer-events: none;
-    font-weight: bold;
-    text-align: center;
-}
-.tf_7 .num2{
-    color:#000;
-    font-size: 90px;
-    opacity: .3;
+.horiz_logo{
     display: inline-block;
-    position: relative;
-    top: -15px;
-    width: 112px;
+    padding: 50px 0;
 }
-.tf_7 .num1{
-    color:#fff;
-    font-size: 70px;
-    opacity: .15;
-    display: inline-block;
-    position: relative;
-    top:20px;
-    width: 41px;
+.horiz_logo img{
+    width: 75%;
 }
-
+.fifth_sec .left_content{
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+.fifth_sec .content-block{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+}
+.fifth_sec .sec_title{
+    text-align: left;
+}
 /*-------------------------------------------------------
    footer
 -------------------------------------------------------*/
 footer{
-    text-align: center;
-    background: #87744c;
-    padding: 50px 20px 30px 20px;
-    position: relative;
+    padding: 10px;
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*bottom: 20px;*/
 }
 footer .full_logo2{
     width: 300px;

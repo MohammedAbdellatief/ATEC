@@ -13,7 +13,7 @@ input, textarea {
 	width: 100%;
 	border: none;
 	border-radius: 0;
-	border-bottom: 1px solid rgba(0,0,0,.2);
+	border-bottom: 1px solid rgba(255,255,255,1);
 	box-sizing: border-box;
 	resize: vertical;
 	height: 45px;
@@ -24,7 +24,7 @@ input:focus, textarea:focus { outline: none; }
 /* Label */
 
 label {
-	color: #171617;
+	color: #fff;
 	font-size: 14px;
 	font-weight: normal;
 	position: absolute;
@@ -44,8 +44,8 @@ input:focus ~ label, input.used ~ label, textarea:focus ~ label, textarea.used ~
   -webkit-transform: scale(.75);
           transform: scale(.75);
 	padding: 0;
-	font-size: 13px;
-	color: #171617;
+	font-size: 14px;
+	color: #000;
 }
 
 
@@ -63,7 +63,7 @@ input:focus ~ label, input.used ~ label, textarea:focus ~ label, textarea.used ~
 	width: 0;
 	bottom: 1px; 
 	position: absolute;
-	background: #171617;
+	background: #fff;
 	-webkit-transition:all 0.2s ease; 
 	transition: all 0.2s ease;
 }

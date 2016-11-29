@@ -1,9 +1,8 @@
-<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 55.8">
-	<style>
-		.st0{fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#B7D333;stroke-width:2;stroke-miterlimit:10;} .st1{fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#B7D333;stroke-miterlimit:10;}
-	</style>
-	<path class="st0" d="M39 22.3V45M48 24.9v20.7"/>
-	<path class="st1" d="M.3 44.3h23.4l.1-32.1L4.2 32.7v11.6M75 44.3H24.8V19.7l36 7.8v16.8"/>
-	<path class="st1" d="M75 44.3H24.8V11.6l45.1 12v20.7"/>
-	<path class="st0" d="M75 45.6H.3"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 35.5">
+	<g fill="none" stroke="#B7D333">
+		<path stroke-width="2" d="M39 11.5v22.7m9-20.1v20.7"/>
+		<path stroke-width="1" d="M.3 33.5h23.4l.1-32.1L4.2 21.9v11.6m70.8 0H24.8V8.9l36 7.8v16.8"/>
+		<path stroke-width="2" d="M75 33.5H24.8V.8l45.1 12v20.7"/>
+		<path stroke-width="1" d="M75 34.8H.3"/>
+	</g>
 </svg>
