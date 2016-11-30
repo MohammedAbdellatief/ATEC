@@ -130,6 +130,9 @@ nav > ul ul li:last-child{
     color: #fff;
     cursor: pointer;
   }
+  header{
+    z-index: 9999;
+  }
 
   /*! Pushy - v1.0.0 - 2016-3-1
 * Pushy is a responsive off-canvas navigation menu using CSS transforms & transitions.

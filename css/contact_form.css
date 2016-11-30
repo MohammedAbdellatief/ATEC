@@ -45,7 +45,7 @@ input:focus ~ label, input.used ~ label, textarea:focus ~ label, textarea.used ~
           transform: scale(.75);
 	padding: 0;
 	font-size: 14px;
-	color: #000;
+	color: #ccc;
 }
 
 
@@ -64,8 +64,10 @@ input:focus ~ label, input.used ~ label, textarea:focus ~ label, textarea.used ~
 	bottom: 1px; 
 	position: absolute;
 	background: #fff;
-	-webkit-transition:all 0.2s ease; 
-	transition: all 0.2s ease;
+	transition: all 0.4s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+	-moz-transition: all 0.4s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+	-webkit-transition: all 0.4s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+	-o-transition: all 0.4s cubic-bezier(0.16, 0.68, 0.43, 0.99);
 }
 
 .bar:before { left: 50%; }

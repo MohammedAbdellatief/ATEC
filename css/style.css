@@ -169,6 +169,48 @@ h2{
 .text_center{
     text-align: center;
 }
+.btn{
+    cursor: pointer;
+    border: solid 1px #fff;
+    width: auto;
+    padding:0 60px 0 20px;
+    font-size: .85em;
+    position: relative;
+    text-transform: uppercase;
+    font-family: 'Syntax LT Std' , sans-serif;
+    background-color: transparent;
+    color: #fff;
+    height: 40px;
+}
+.btn:after,.btn:before{
+    content: '';
+    position: absolute;
+    right: -1px;
+    top: -1px;
+    width: 40px;
+    height: 40px;
+    border: solid 1px #fff;
+    background: url(../img/arrow.svg) no-repeat center center scroll;
+    background-size: 15px;
+    padding: 0;
+    box-sizing: border-box;
+}
+.btn:hover:before, .btn:hover:after{
+    transition: all 0.4s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+    -moz-transition: all 0.4s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+    -webkit-transition: all 0.4s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+    -o-transition: all 0.4s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+}
+.btn:before{
+    border: none;
+    background-position: -50px center;
+}
+.btn:hover:before{
+    background-position: center center;
+}
+.btn:hover:after{
+    background-position: 50px center;
+}
 /*-------------------------------------------------------
    Section one
 -------------------------------------------------------*/
@@ -304,11 +346,11 @@ aside .slogan:before{
 }
 .fourth_sec .BG_text{
     left: 50px;
-    top: 12%;
+    top:80px;
 }
 .clients_list a{
     display: block;
-    padding: 30px 20px;
+    padding: 30px 20px 0px;
 }
 .clients_list svg{
     fill:#959595;
@@ -323,8 +365,7 @@ aside .slogan:before{
     position: relative;
     background-color: #2e2e2e;
     padding: 0;
-    height: auto;
-    min-height: 100vh;
+    height: 638px;
     z-index: 2;
     overflow: hidden;
 }
@@ -347,11 +388,7 @@ aside .slogan:before{
     vertical-align: middle;
 }
 .form_btn{
-    color: #fff;
-    border: solid 1px #fff;
-    cursor: pointer;
-}
-.form_btn:hover{
+    float: right;
 }
 .horiz_logo{
     display: inline-block;
@@ -369,9 +406,24 @@ aside .slogan:before{
     display: table-cell;
     vertical-align: middle;
     text-align: left;
+    padding: 0 15%;
 }
 .fifth_sec .sec_title{
     text-align: left;
+    font-size: 2.2em;
+}
+.links_list{
+    margin: 40px 0;
+}
+.links_list li{
+    width: 40%;
+    display: inline-block;
+    margin: 0 2%;
+}
+.links_list li a{
+    display: inline-block;
+    font-size: .8em;
+    white-space: nowrap;
 }
 /*-------------------------------------------------------
    footer
@@ -415,12 +467,7 @@ footer .social a:hover{
     .menu_btn{
         display: none;
     }
-
-    footer .social {
-        float: none;
-        text-align: center;
-    }
-    footer{
-        padding: 20px;
+    .col_outline .flex{
+        display: none;
     }
 }
