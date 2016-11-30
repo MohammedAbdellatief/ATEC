@@ -52,6 +52,10 @@ img{
     -webkit-transition: all 0.3s cubic-bezier(0.16, 0.68, 0.43, 0.99);
     -o-transition: all 0.3s cubic-bezier(0.16, 0.68, 0.43, 0.99);
 }
+h1,h2,h3,h4,h5,h6{
+    font-family:'Syntax LT Std bold' , sans-serif ;
+    font-weight: normal;
+}
 .slow{
     transition-duration: 1.5s;
     -moz-transition-duration: 1.5s;
@@ -91,12 +95,13 @@ textarea{
 }
 .sec{
     height: 100vh;
-    padding: 80px 0;
+    padding: 70px 0;
     position: relative;
 }
 .social a{
     display: block;
-    padding: 10px;
+    padding: 7px;
+    text-align: center;
 }
 .social a svg{
     width: 15px;
@@ -365,7 +370,8 @@ aside .slogan:before{
     position: relative;
     background-color: #2e2e2e;
     padding: 0;
-    height: 638px;
+    min-height: 638px;
+    height: 100vh;
     z-index: 2;
     overflow: hidden;
 }
@@ -430,9 +436,8 @@ aside .slogan:before{
 -------------------------------------------------------*/
 footer{
     padding: 10px;
-    /*position: absolute;*/
-    /*left: 0;*/
-    /*bottom: 20px;*/
+    position: absolute;
+    bottom: 20px;
 }
 footer .full_logo2{
     width: 300px;

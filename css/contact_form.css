@@ -4,7 +4,7 @@
 }
 
 input, textarea {
-	font-size: 19px;
+	font-size: 15px;
 	padding: 10px 10px 10px 5px;
 	-webkit-appearance: none;
 	background-color: transparent;
@@ -17,6 +17,7 @@ input, textarea {
 	box-sizing: border-box;
 	resize: vertical;
 	height: 45px;
+	font-family: 'Syntax LT Std bold' , sans-serif;
 }
 
 input:focus, textarea:focus { outline: none; }

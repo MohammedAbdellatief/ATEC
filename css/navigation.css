@@ -5,6 +5,14 @@ header{
   width: 100%;
   text-align: center;
 }
+header .horiz_logo{
+  padding: 10px;
+  position: absolute;
+  left: -250px;
+  top:0;
+  text-align: left;
+  width: 225px;
+}
 nav{
   display: inline-block;
   cursor: default;
@@ -34,8 +42,9 @@ nav > ul ul li:last-child{
   right: 17px;
 }
 
-.top-nav-expand{ background-color: rgba(0,0,0,.1);}
-.top-nav-expand a{ padding: 27px 0; }
+.top-nav-expand{ background-color: rgba(0,0,0,.2);}
+.top-nav-expand a{ padding: 20px 0; }
+.top-nav-expand .horiz_logo{ left: 0; }
 .top-nav-collapse{ visibility: hidden;opacity: 0; z-index: -1;}
 
 /*==================================================
@@ -76,7 +85,7 @@ nav > ul ul li:last-child{
     -o-transition: all 0.3s cubic-bezier(0.16, 0.68, 0.43, 0.99);
   }
   nav > ul a:hover:before{
-    width: 100%;
+    /*width: 100%;*/
   }
 
   /*--- DROPDOWN ---*/
