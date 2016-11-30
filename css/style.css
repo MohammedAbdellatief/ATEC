@@ -301,9 +301,6 @@ aside .slogan:before{
     bottom: 40%;
     left: 130px;
 }
-.carousetl_item{
-    background-color: red;
-}
 .carousetl_item_info{
     position: absolute;
     z-index: 1000;
