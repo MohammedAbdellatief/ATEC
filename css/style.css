@@ -56,6 +56,10 @@ h1,h2,h3,h4,h5,h6{
     font-family:'Syntax LT Std bold' , sans-serif ;
     font-weight: normal;
 }
+.hidden{
+    /*visibility: hidden;*/
+    /*pointer-events: none;*/
+}
 .slow{
     transition-duration: 1.5s;
     -moz-transition-duration: 1.5s;
@@ -164,7 +168,6 @@ h2{
     padding: 0;
 }
 .cover_img{
-    padding: 50px;
     background: url(../img/bg/BG_3.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -239,6 +242,7 @@ aside .social{
     right: 0;
     margin: auto;
     width: 40px;
+    z-index: 100;
 }
 aside .slogan{
     white-space: nowrap;
@@ -248,8 +252,8 @@ aside .slogan{
     right: 0;
     z-index: 13;
     text-transform: uppercase;
-    font-size: .6em;
-    font-family: 'Syntax LT Std bold' , sans-serif;
+    font-size: .55em;
+    font-family: 'Syntax LT Std' , sans-serif;
     letter-spacing: .2em;
     -moz-transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
@@ -290,6 +294,38 @@ aside .slogan:before{
     background: url(../img/logo_vertical.png) no-repeat center center scroll transparent;
     background-size:60%;
     margin: auto;
+}
+.carousel_arrows{
+    position: absolute;
+    z-index: 9999;
+    bottom: 40%;
+    left: 130px;
+}
+.carousetl_item{
+    background-color: red;
+}
+.carousetl_item_info{
+    position: absolute;
+    z-index: 1000;
+    right: 0;
+    top: 50%;
+}
+.carousel_img{
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+}
+.carousel_img img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
 }
 /*-------------------------------------------------------
    Section two

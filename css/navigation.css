@@ -43,8 +43,8 @@ nav > ul ul li:last-child{
 }
 
 .top-nav-expand{ background-color: rgba(0,0,0,.2);}
-.top-nav-expand a{ padding: 20px 0; }
-.top-nav-expand .horiz_logo{ left: 0; }
+.top-nav-expand nav a{ padding: 20px 0;}
+.top-nav-expand .horiz_logo{ left: 0;}
 .top-nav-collapse{ visibility: hidden;opacity: 0; z-index: -1;}
 
 /*==================================================
@@ -139,10 +139,14 @@ nav > ul ul li:last-child{
     color: #fff;
     cursor: pointer;
   }
-  header{
+  header, .top-nav-expand{
     z-index: 9999;
+    text-align: left;
+    background-color: rgba(0,0,0,.4);
   }
-
+  header .horiz_logo, .top-nav-expand .horiz_logo{
+    left: 52px;
+  }
   /*! Pushy - v1.0.0 - 2016-3-1
 * Pushy is a responsive off-canvas navigation menu using CSS transforms & transitions.
 * https://github.com/christophery/pushy/
@@ -154,21 +158,25 @@ nav > ul ul li:last-child{
     height: 100vh;
     top: 0;
     z-index: 9999;
-    background: #87764f;
+    background:#2e2e2e;
     overflow: auto;
     visibility: hidden;
     -webkit-overflow-scrolling: touch;
     /* enables momentum scrolling in iOS overflow elements */
   }
-  .pushy a {
+  .pushy a, .top-nav-expand nav a {
     display: block;
     color: #fff;
-    padding: 15px;
+    padding: 20px;
     outline: 0;
   }
-  .pushy a:hover {
-    background-color: #a59677;
-    color: #171617;
+  .pushy a:hover{
+    background-color: #292929;
+    color: #b7d333;
+  }
+  .pushy a.nav-active{
+    box-shadow:-3px 0 0 #b7d333 inset;
+    background-color: #202020;
   }
   .pushy ul {
     margin: 0;
@@ -233,7 +241,7 @@ nav > ul ul li:last-child{
     bottom: 0;
     left: 0;
     z-index: 9998;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.75);
     -webkit-animation: fade 500ms;
     animation: fade 500ms;
   }
