@@ -47,10 +47,15 @@ img{
     height: 100%;
 }
 .transition, a{
-    transition: all 0.3s cubic-bezier(0.16, 0.68, 0.43, 0.99);
-    -moz-transition: all 0.3s cubic-bezier(0.16, 0.68, 0.43, 0.99);
-    -webkit-transition: all 0.3s cubic-bezier(0.16, 0.68, 0.43, 0.99);
-    -o-transition: all 0.3s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+    /*transition: all 0.3s cubic-bezier(0.16, 0.68, 0.43, 0.99);*/
+    /*-moz-transition: all 0.3s cubic-bezier(0.16, 0.68, 0.43, 0.99);*/
+    /*-webkit-transition: all 0.3s cubic-bezier(0.16, 0.68, 0.43, 0.99);*/
+    /*-o-transition: all 0.3s cubic-bezier(0.16, 0.68, 0.43, 0.99);*/
+
+    -moz-transition: all 0.5s cubic-bezier(0.42, 0, 0, 0.995);
+    -o-transition: all 0.5s cubic-bezier(0.42, 0, 0, 0.995);
+    -webkit-transition: all 0.5s cubic-bezier(0.42, 0, 0, 0.995);
+    transition: all 0.5s cubic-bezier(0.42, 0, 0, 0.995);
 }
 .slow{
     transition-duration: 1.5s;
