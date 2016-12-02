@@ -15,8 +15,8 @@
     <!--<link href="css/normalize.min.css" rel="stylesheet">-->
     <link rel="stylesheet" href="css/pintsize.min.css"/>
     <link href="css/navigation.css" rel="stylesheet">
-    <link href="css/slick.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/slick.css" rel="stylesheet">
     <link href="css/contact_form.css" rel="stylesheet">
     <link href="css/hamburgers.css" rel="stylesheet">
 
@@ -24,7 +24,7 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
     <![endif]-->
-    
+
 </head>
 
 <body>
@@ -62,7 +62,7 @@
 
         <div class="logo_container">
             <span class="logo"></span>
-            <span class="pagingInfo">1/3</span>
+            <span class="pagingInfo">01/03</span>
             <span class="no-selection BG_text">atec</span>
         </div>
         <aside class="clearfix">
@@ -88,32 +88,26 @@
         </aside>
         <div class="carousel_arrows"></div>
         <div class="carousel">
-            <div class="carousetl_item">
-                <div class="carousetl_item_info">
-                    <h2>lorem ipsum dolor site amet.</h2>
+            <div class="carousel_item carousel_item1">
+                <div class="carousel_item_info transition">
+                    <h1>We are the Leaders in the construction</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur lacinia amet adipiscing. donec mauris lectus, bibendum turpis feugiat dapibus dolor. consectetur lacinia amet mauris lorem.</p>
+                    <button type="button" class="btn transition" >Read More</button>
                 </div>
-                <!--<div class="carousel_img">-->
-                    <!--<img src="img/bg/BG1.png" alt=""/>-->
-                <!--</div>-->
-                <img src="img/bg/BG1.png" alt=""/>
             </div>
-            <div class="carousetl_item">
-                <!--<div class="carousetl_item_info hidden">-->
-                    <!--<h2>lorem ipsum dolor site amet.</h2>-->
-                <!--</div>-->
-                <!--<div class="carousel_img">-->
-                    <!--<img src="img/bg/BG_3.jpg" alt=""/>-->
-                <!--</div>-->
-                <img src="img/bg/BG_3.jpg" alt=""/>
+            <div class="carousel_item carousel_item2">
+                <div class="carousel_item_info transition hidden animate">
+                    <h1>Slide two text goes here</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur lacinia amet adipiscing. donec mauris lectus, bibendum turpis feugiat dapibus dolor. consectetur lacinia amet mauris lorem.</p>
+                    <button type="button" class="btn transition" >Read More</button>
+                </div>
             </div>
-            <div class="carousetl_item">
-                <!--<div class="carousetl_item_info hidden">-->
-                    <!--<h2>lorem ipsum dolor site amet.</h2>-->
-                <!--</div>-->
-                <!--<div class="carousel_img">-->
-                    <!--<img src="img/bg/BG2.png" alt=""/>-->
-                <!--</div>-->
-                <img src="img/bg/BG2.png" alt=""/>
+            <div class="carousel_item carousel_item3">
+                <div class="carousel_item_info transition hidden animate">
+                    <h1>Slide three text goes here</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur lacinia amet adipiscing. donec mauris lectus, bibendum turpis feugiat dapibus dolor. consectetur lacinia amet mauris lorem.</p>
+                    <button type="button" class="btn transition" >Read More</button>
+                </div>
             </div>
         </div>
 
@@ -246,7 +240,6 @@
             </div>
         </div>
     </section>
-
     <!--fifth section-->
     <section id="fifth_sec" class="sec fifth_sec">
         <div class="flex">
@@ -338,15 +331,19 @@
     $(document).ready(function(){
         var $status = $('.pagingInfo');
         var $slickElement = $('.carousel');
-        var $slickText = $('.carousetl_item_info');
+        var $slickText = $('.carousel_item_info');
 
         $slickElement.slick({
             lazyLoad: 'ondemand',
             autoplay: true,
-            autoplaySpeed: 6000,
+            fade: true,
+            speed:900,
+            autoplaySpeed: 4000,
             pauseOnHover: false,
+            pauseOnFocus:false,
             arrows: true,
             zIndex: 99,
+            swipe: false,
             appendArrows: $('.carousel_arrows'),
             customPaging : function(slider, i) {
                 var thumb = $(slider.$slides[i]).data();
@@ -356,21 +353,24 @@
                 {
                     breakpoint: 768,
                     settings: {
-                        fade: true,
-                        cssEase: 'linear'
+                        fade: false,
+                        swipe:true,
+                        speed:300
                     }
                 }
             ]
         });
 
-        $slickElement.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+        $slickElement.on('beforeChange', function (event, slick, currentSlide) {
             //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
             var i = (currentSlide ? currentSlide : 0) + 1;
-            $status.text(i + '/' + slick.slideCount);
+            $status.text('0'+i + '/' +'0'+ slick.slideCount);
 
             // animate text
-//            $slickText[currentSlide].removeClass('hidden');
-//            $slickText[currentSlide].addClass('animated bounce');
+            $slickText[currentSlide].classList.add('hidden','animate');
+        });
+        $slickElement.on('afterChange', function (event, slick, currentSlide) {
+            $slickText[currentSlide].classList.remove('hidden','animate');
         });
 
     });
