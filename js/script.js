@@ -72,7 +72,7 @@
         $slickElement.removeClass('hidden');
 
         $slickElement.slick({
-            lazyLoad: 'ondemand',
+            //lazyLoad: 'ondemand',
             autoplay: true,
             fade: true,
             speed:900,

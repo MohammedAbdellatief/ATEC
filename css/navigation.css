@@ -1,6 +1,6 @@
 header{
   position: fixed;
-  right: 0;
+  left: 0;
   z-index: 10;
   width: 100%;
   text-align: center;
@@ -150,8 +150,8 @@ nav > ul ul li:last-child{
     left: 10px;
     direction: rtl;
   }
-  nav .social a{
-    display: inline-block;
+  nav .social a, .top-nav-expand .social a{
+    display: inline-block ;
     padding: 10px;
   }
   nav .social a svg{
