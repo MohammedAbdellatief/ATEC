@@ -439,16 +439,19 @@ button.slick-prev:hover{
 }
 .first_line_icon svg{
     width: 60px;
+    height: 45px;
     stroke-dasharray: 320px;
     stroke-dashoffset: 320px;
 }
 .second_line_icon svg{
     width: 70px;
+    height: 36px;
     stroke-dasharray: 46px;
     stroke-dashoffset: 46px;
 }
 .third_line_icon svg{
     width: 70px;
+    height: 35px;
     stroke-dasharray: 151px;
     stroke-dashoffset: 151px;
 }
@@ -618,6 +621,7 @@ button.slick-prev:hover{
 }
 .clients_list svg{
     fill:#959595;
+    max-height: 100px;
 }
 .clients_list a:hover svg{
     fill:#b6d232;
