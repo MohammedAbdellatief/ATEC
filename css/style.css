@@ -61,6 +61,9 @@ img{
     -webkit-transition: all 0.5s cubic-bezier(0.42, 0, 0, 0.995);
     transition: all 0.5s cubic-bezier(0.42, 0, 0, 0.995);
 }
+svg{
+    max-height: 200px !important;
+}
 h1,h2,h3,h4,h5,h6{
     font-family:'Syntax LT Std bold' , sans-serif ;
     font-weight: normal;
