@@ -8,7 +8,6 @@
         $(window).scroll(function() {
             if (nav.offset().top > 300) {
                 nav.addClass("top-nav-expand");
-                //alert('hi');
             } else {
                 nav.removeClass("top-nav-expand");
             }
@@ -64,6 +63,54 @@
         });
 
 
+        //carousel slider
+        //======================================================
+        var $status = $('.pagingInfo');
+        var $slickElement = $('.carousel');
+        var $slickText = $('.carousel_item_info');
+
+        $slickElement.removeClass('hidden');
+
+        $slickElement.slick({
+            lazyLoad: 'ondemand',
+            autoplay: true,
+            fade: true,
+            speed:900,
+            autoplaySpeed: 6000,
+            pauseOnHover: false,
+            pauseOnFocus:false,
+            arrows: true,
+            zIndex: 99,
+            swipe: false,
+            appendArrows: $('.carousel_arrows'),
+            customPaging : function(slider, i) {
+                var thumb = $(slider.$slides[i]).data();
+                return '<a>'+i+'</a>';
+            },
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        fade: false,
+                        swipe:true,
+                        speed:300
+                    }
+                }
+            ]
+        });
+
+        $slickElement.on('beforeChange', function (event, slick, currentSlide) {
+            // animate text
+            $slickText[currentSlide].classList.add('hidden','animate');
+        });
+        $slickElement.on('afterChange', function (event, slick, currentSlide) {
+            //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
+            var i = (currentSlide ? currentSlide : 0) + 1;
+            $status.html("<strong>" + '0' + i +"</strong>"+'/ 0'+ slick.slideCount);
+
+            $slickText[currentSlide].classList.remove('hidden','animate');
+        });
+
 
         // Contact form
         //=====================================================
@@ -75,6 +122,7 @@
                 $this.removeClass('used');
         });
 
+
         //hamburger menu
         //=====================================================
         $(".hamburger").on('click',function(e){
@@ -85,6 +133,62 @@
             e.preventDefault();
             $('.hamburger').removeClass('is-active');
         });
+
+
+
+
+        //isotop projects filtering
+        //========================================
+        // init Isotope
+        var iso = new Isotope( '.grid', {
+            itemSelector: '.element-item',
+            layoutMode: 'fitRows'
+        });
+
+// filter functions
+        var filterFns = {
+            // show if number is greater than 50
+            numberGreaterThan50: function( itemElem ) {
+                var number = itemElem.querySelector('.number').textContent;
+                return parseInt( number, 10 ) > 50;
+            },
+            // show if name ends with -ium
+            ium: function( itemElem ) {
+                var name = itemElem.querySelector('.name').textContent;
+                return name.match( /ium$/ );
+            }
+        };
+
+// bind filter button click
+        var filtersElem = document.querySelector('.filters-button-group');
+        filtersElem.addEventListener( 'click', function( event ) {
+            // only work with buttons
+            if ( !matchesSelector( event.target, 'button' ) ) {
+                return;
+            }
+            var filterValue = event.target.getAttribute('data-filter');
+            // use matching filter function
+            filterValue = filterFns[ filterValue ] || filterValue;
+            iso.arrange({ filter: filterValue });
+        });
+// change is-checked class on buttons
+        var buttonGroups = document.querySelectorAll('.button-group');
+        for ( var j=0, len = buttonGroups.length; j < len; j++ ) {
+            var buttonGroup = buttonGroups[j];
+            radioButtonGroup( buttonGroup );
+        }
+
+        function radioButtonGroup( buttonGroup ) {
+            buttonGroup.addEventListener( 'click', function( event ) {
+                // only work with buttons
+                if ( !matchesSelector( event.target, 'button' ) ) {
+                    return;
+                }
+                buttonGroup.querySelector('.is-checked').classList.remove('is-checked');
+                event.target.classList.add('is-checked');
+            });
+        }
+
 
 
 

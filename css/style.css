@@ -19,6 +19,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    /*box-shadow: 0 0 0 2px rgba(0,0,0,.4);*/
 }
 html {
     overflow-x: hidden;
@@ -60,6 +61,9 @@ img{
 h1,h2,h3,h4,h5,h6{
     font-family:'Syntax LT Std bold' , sans-serif ;
     font-weight: normal;
+}
+.collapsed_columns .col{
+    padding: 0;
 }
 .hidden{
     opacity: 0;
@@ -103,18 +107,20 @@ textarea{
     pointer-events: none;
 }
 .sec{
-    height: 100vh;
     padding: 70px 0;
     position: relative;
 }
+.social{
+    cursor: default;
+}
 .social a{
     display: block;
-    padding: 7px;
+    padding: 5px;
     text-align: center;
 }
 .social a svg{
-    width: 15px;
-    height: 15px;
+    width: 14px;
+    height: 14px;
 }
 .BG_text{
     color: #fff;
@@ -173,7 +179,7 @@ h2{
     padding: 0;
 }
 .cover_img{
-    background: url(../img/bg/BG_3.jpg) no-repeat center center scroll;
+    background: url(../img/bg/BG3.png) no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -182,7 +188,7 @@ h2{
 .text_center{
     text-align: center;
 }
-.btn{
+.btn, button[type='button']{
     cursor: pointer;
     border: solid 1px #fff;
     width: auto;
@@ -194,8 +200,12 @@ h2{
     background-color: transparent;
     color: #fff;
     height: 40px;
+    outline: none;
 }
-.btn:after,.btn:before{
+.btn:hover, button[type='button']:hover{
+    box-shadow: 150px 0 0 rgba(255,255,255,.15) inset;
+}
+.btn:after,.btn:before,  button[type='button']:after,  button[type='button']:before{
     content: '';
     position: absolute;
     right: -1px;
@@ -204,34 +214,36 @@ h2{
     height: 40px;
     border: solid 1px #fff;
     background: url(../img/arrow.svg) no-repeat center center scroll;
-    background-size: 15px;
+    background-size: 16px;
     padding: 0;
     box-sizing: border-box;
 }
-.btn:hover:before, .btn:hover:after{
+.btn:hover:before, .btn:hover:after,  button[type='button']:hover:after,  button[type='button']:hover:before{
     transition: all 0.4s cubic-bezier(0.16, 0.68, 0.43, 0.99);
     -moz-transition: all 0.4s cubic-bezier(0.16, 0.68, 0.43, 0.99);
     -webkit-transition: all 0.4s cubic-bezier(0.16, 0.68, 0.43, 0.99);
     -o-transition: all 0.4s cubic-bezier(0.16, 0.68, 0.43, 0.99);
 }
-.btn:before{
+.btn:before,  button[type='button']:before{
     border: none;
     background-position: -50px center;
 }
-.btn:hover:before{
+.btn:hover:before, button[type='button']:hover:before{
     background-position: center center;
 }
-.btn:hover:after{
+.btn:hover:after,  button[type='button']:hover:after{
     background-position: 50px center;
 }
 /*-------------------------------------------------------
    Section one
 -------------------------------------------------------*/
-.first_sec{
+.sec.first_sec{
     position: relative;
     padding: 0;
     background-color: #292929;
     z-index: 2;
+    min-height: 500px;
+    height: 100vh;
 }
 .first_sec aside{
     float: left;
@@ -253,7 +265,7 @@ aside .slogan{
     white-space: nowrap;
     position: absolute;
     left: 0;
-    bottom: 230px;
+    bottom: 245px;
     right: 0;
     z-index: 13;
     text-transform: uppercase;
@@ -303,8 +315,8 @@ aside .slogan:before{
 .carousel_arrows{
     position: absolute;
     z-index: 9999;
-    bottom: 40%;
-    left: 130px;
+    top: 290px;
+    left: 110px;
 }
 .carousel_item{
     height: 100%;
@@ -319,7 +331,10 @@ aside .slogan:before{
     background: url(../img/bg/BG1.png) no-repeat center center
 }
 .carousel_item2{
-    background: url(../img/bg/BG_3.jpg) no-repeat center center
+    background: url(../img/bg/BG2.png) no-repeat center center
+}
+.carousel_item3{
+    background: url(../img/bg/BG3.png) no-repeat center center
 }
 .carousel_item_info{
     position: absolute;
@@ -341,15 +356,65 @@ aside .slogan:before{
     padding-left: 20%;
 }
 .carousel_item_info.animate{
-    -moz-transform: translateX(30px);
-    -webkit-transform: translateX(30px);
-    -o-transform: translateX(30px);
-    -ms-transform: translateX(30px);
-    transform: translateX(30px);
+    -moz-transform: translateX(-30px);
+    -webkit-transform: translateX(-30px);
+    -o-transform: translateX(-30px);
+    -ms-transform: translateX(-30px);
+    transform: translateX(-30px);
 }
-/*-------------------------------------------------------
-   Section two
--------------------------------------------------------*/
+
+.pagingInfo{
+    display: block;
+    text-align: center;
+    color: #fff;
+    padding: 10px 0 0;
+}
+.pagingInfo strong{
+    color:#b7d333;
+    margin: 5px;
+    font-size: 1.8em;
+    font-family: 'Syntax LT Std bold' , sans-serif;
+}
+button.slick-next, button.slick-prev{
+    border: none;
+    padding: 5px 30px 5px 5px;
+    height: 25px;
+    color:#000;
+    fill:#000;
+    font-family: 'Syntax LT Std bold' , sans-serif;
+    margin: 10px;
+    -moz-transition: all 0.5s cubic-bezier(0.42, 0, 0, 0.995);
+    -o-transition: all 0.5s cubic-bezier(0.42, 0, 0, 0.995);
+    -webkit-transition: all 0.5s cubic-bezier(0.42, 0, 0, 0.995);
+    transition: all 0.5s cubic-bezier(0.42, 0, 0, 0.995);
+}
+button.slick-next:after, button.slick-next:before, button.slick-prev:before, button.slick-prev:after{
+    border: none;
+    width: 30px;
+    height: 25px;
+    background-image: url("../img/arrow-long.svg");
+}
+button.slick-prev:after, button.slick-prev:before{
+    right: auto;
+    left: 0;
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+button.slick-prev{
+    padding: 5px 5px 5px 30px;
+}
+button.slick-next:hover{
+    box-shadow: 90px 0 0 rgba(183,209,50,1) inset;
+}
+button.slick-prev:hover{
+    box-shadow: -90px 0 0 rgba(183,209,50,1) inset;
+}
+    /*-------------------------------------------------------
+       Section two
+    -------------------------------------------------------*/
 .second_sec {
     background-color: #272727;
 }
@@ -395,10 +460,143 @@ aside .slogan:before{
 /*-------------------------------------------------------
    Section three
 -------------------------------------------------------*/
+.third_sec{
+    height: auto;
+    padding-bottom: 0;
+}
 .third_sec .BG_text{
     right: 50px;
     top: 100px;
+    z-index: 12;
 }
+.project_unit{
+    display: block;
+    position: relative;
+    background-color: #000;
+    line-height: 0;
+}
+.proj_title{
+    position: absolute;
+    z-index: 10;
+    left: 20px;
+    top: 20px;
+    text-transform: uppercase;
+    color: #fff;
+    padding-right: 20px;
+    line-height: 25px;
+    font-size: 1.2em;
+}
+.proj_img{
+    overflow:hidden;
+    display: block;
+}
+.proj_img img{
+    width: 100%;
+    opacity: .5;
+}
+.project_unit:before{
+    content: attr(datat-category);
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: .6em;
+    letter-spacing: .4em;
+
+    -moz-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+
+    transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+
+    -moz-transition: all 0.5s cubic-bezier(0.42, 0, 0, 0.995);
+    -o-transition: all 0.5s cubic-bezier(0.42, 0, 0, 0.995);
+    -webkit-transition: all 0.5s cubic-bezier(0.42, 0, 0, 0.995);
+    transition: all 0.5s cubic-bezier(0.42, 0, 0, 0.995);
+}
+.project_unit:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 13;
+    width: 20px;
+    height: 20px;
+    padding: 30px;
+    border-radius: 100px;
+    background: url(../img/magni.svg) no-repeat scroll center center #abc729;
+    background-size: 25px;
+
+    -moz-transition: all 0.5s cubic-bezier(0.42, 0, 0, 0.995);
+    -o-transition: all 0.5s cubic-bezier(0.42, 0, 0, 0.995);
+    -webkit-transition: all 0.5s cubic-bezier(0.42, 0, 0, 0.995);
+    transition: all 0.5s cubic-bezier(0.42, 0, 0, 0.995);
+
+    -moz-transform: scale(0);
+    -webkit-transform: scale(0);
+    -o-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+}
+
+.project_unit:hover .proj_title, .project_unit:hover:before{
+    opacity: 0;
+}
+.project_unit:hover:after{
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+
+.project_unit:hover .proj_img img{
+    opacity: 1;
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.filters-button-container{
+    width: 100%;
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.filters-button-group{
+    text-align: center;
+    cursor: default;
+    padding: 10px 15px 20px;
+}
+.filters-button-group .button{
+    background: none;
+    outline: none;
+    border: none;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: 5px;
+    padding: 5px;
+    font-size: .7em;
+    display: inline-block;
+}
+.filters-button-group .button:hover, .filters-button-group .button.is-checked{
+    color: #abc729;
+}
+
 /*-------------------------------------------------------
    Section Four
 -------------------------------------------------------*/
@@ -407,11 +605,13 @@ aside .slogan:before{
 }
 .fourth_sec .BG_text{
     left: 50px;
-    top:80px;
+    top:90px;
 }
 .clients_list a{
     display: block;
-    padding: 30px 20px 0px;
+    padding: 30px 20px 0;
+    width: 130px;
+    margin: auto;
 }
 .clients_list svg{
     fill:#959595;
@@ -422,7 +622,7 @@ aside .slogan:before{
 /*-------------------------------------------------------
    Section five
 -------------------------------------------------------*/
-.fifth_sec{
+.sec.fifth_sec{
     position: relative;
     background-color: #2e2e2e;
     padding: 0;
@@ -487,6 +687,19 @@ aside .slogan:before{
     font-size: .8em;
     white-space: nowrap;
 }
+.fifth_sec .social{
+    position: absolute;
+    bottom: 0;
+    direction: rtl;
+    padding: 25px;
+}
+.fifth_sec .social a{
+    display: inline-block;
+}
+.fifth_sec .social a svg{
+    width: 16px;
+    height: 16px;
+}
 /*-------------------------------------------------------
    footer
 -------------------------------------------------------*/
@@ -522,13 +735,57 @@ footer .social a:hover{
 ================================================== */
 /* Note: Design for a width of 768px and smaller */
 @media only screen and (max-width: 768px) {
-    .loading{
+
+    .col_outline .flex, .first_sec aside , .logo_container, .carousel_arrows, .fifth_sec .social, .fifth_sec .horiz_logo{
         display: none;
     }
-    .menu_btn{
-        display: none;
+    header, .top-nav-expand{
+        background-color: #202020;
     }
-    .col_outline .flex{
-        display: none;
+    .sec{
+        padding: 40px 0;
     }
+    .content-block{
+        margin: 0;
+        padding: 0;
+    }
+    .carousel_item_info{
+        top:auto;
+        bottom: 30px;
+        right: auto;
+        left: 30px;
+        width: auto;
+        direction: ltr;
+    }
+    .carousel_item_info p{
+        padding-right:20px;
+        padding-left: 0;
+    }
+    .Specialization{
+        padding: 20px 0;
+        text-align: center;
+    }
+    .clients_list a{
+        padding: 20px 10px 0;
+    }
+    .sec.fifth_sec{
+        height: auto;
+        padding: 40px 0 0 0;
+    }
+    .contact_form{
+        padding: 0;
+    }
+    .fifth_sec .cover_img{
+        padding: 70px 40px;
+    }
+    .links_list{
+        margin: 10px 0 35px 0;
+    }
+    footer{
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+
 }

@@ -17,6 +17,9 @@ nav{
   display: inline-block;
   cursor: default;
 }
+nav .social{
+  display: none;
+}
 nav ul > li a{
   color: #fff;
   text-transform: uppercase;
@@ -33,13 +36,6 @@ nav > ul ul li:last-child{
 }
 .menu-btn{
   display: none;
-}
-.pushy-right .social{
-  left: 17px;
-}
-.pushy-left .social{
-  left: auto;
-  right: 17px;
 }
 
 .top-nav-expand{ background-color: rgba(0,0,0,.2);}
@@ -147,6 +143,21 @@ nav > ul ul li:last-child{
   header .horiz_logo, .top-nav-expand .horiz_logo{
     left: 52px;
   }
+  nav .social{
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    direction: rtl;
+  }
+  nav .social a{
+    display: inline-block;
+    padding: 10px;
+  }
+  nav .social a svg{
+    width: 17px;
+    height: 17px;
+  }
   /*! Pushy - v1.0.0 - 2016-3-1
 * Pushy is a responsive off-canvas navigation menu using CSS transforms & transitions.
 * https://github.com/christophery/pushy/
@@ -175,7 +186,8 @@ nav > ul ul li:last-child{
     color: #b7d333;
   }
   .pushy a.nav-active{
-    box-shadow:-3px 0 0 #b7d333 inset;
+    box-shadow:3px 0 0 #b7d333 inset;
+    color:#b7d333;
     background-color: #202020;
   }
   .pushy ul {
