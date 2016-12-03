@@ -249,8 +249,9 @@ h2{
     padding: 0;
     background-color: #292929;
     z-index: 2;
-    min-height: 500px;
-    height: 100vh;
+    /*min-height: 500px;*/
+    /*height: 100vh;*/
+    height: 430px;
 }
 .first_sec aside{
     float: left;
