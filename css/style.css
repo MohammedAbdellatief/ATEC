@@ -755,8 +755,8 @@ footer .social a:hover{
         height: 555px;
     }
     .sec.fifth_sec, .sec.fifth_sec .flex{
+        height: auto;
         min-height: 638px;
-        height: 638px;
     }
     header, .top-nav-expand{
         background-color: #202020;
