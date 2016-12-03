@@ -166,7 +166,8 @@ nav > ul ul li:last-child{
   .pushy {
     position: fixed;
     width: 200px;
-    height: 100vh;
+    /*height: 100vh;*/
+    height: 100%;
     top: 0;
     z-index: 9999;
     background:#2e2e2e;

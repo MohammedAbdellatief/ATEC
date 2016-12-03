@@ -249,9 +249,8 @@ h2{
     padding: 0;
     background-color: #292929;
     z-index: 2;
-    /*min-height: 500px;*/
-    /*height: 100vh;*/
-    height: 555px;
+    min-height: 500px;
+    height: 100vh;
 }
 .first_sec aside{
     float: left;
@@ -750,6 +749,14 @@ footer .social a:hover{
 
     .col_outline .flex, .first_sec aside , .logo_container, .carousel_arrows, .fifth_sec .social, .fifth_sec .horiz_logo{
         display: none;
+    }
+    .sec.first_sec{
+        min-height: 555px;
+        height: 555px;
+    }
+    .sec.fifth_sec, .sec.fifth_sec .flex{
+        min-height: 638px;
+        height: 638px;
     }
     header, .top-nav-expand{
         background-color: #202020;
