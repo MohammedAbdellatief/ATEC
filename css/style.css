@@ -76,10 +76,10 @@ h1,h2,h3,h4,h5,h6{
     pointer-events: none;
 }
 .slow{
-    transition-duration: 1.5s;
-    -moz-transition-duration: 1.5s;
-    -webkit-transition-duration: 1.5s;
-    -o-transition-duration: 1.5s;
+    transition-duration: 2s;
+    -moz-transition-duration: 2s;
+    -webkit-transition-duration: 2s;
+    -o-transition-duration: 2s;
 }
 .max_w{
     max-width: 1024px;
@@ -241,6 +241,20 @@ h2{
 .btn:hover:after,  button[type='button']:hover:after{
     background-position: 50px center;
 }
+
+.stagger_1, .stagger_2 button, .stagger_3 .project_unit, .stagger_4 a{
+    position: relative;
+}
+.stagger_4{
+    overflow: hidden;
+}
+.horiz_logo{
+    position: relative;
+}
+.stagger_5{
+    position: relative;
+}
+
 /*-------------------------------------------------------
    Section one
 -------------------------------------------------------*/
@@ -258,6 +272,64 @@ h2{
     padding: 50px;
     height: 100vh;
     position: relative;
+    font-family: 'Syntax LT Std' , sans-serif;
+}
+.lang_count{
+    position: absolute;
+    z-index: 99;
+    right: 35px;
+    top: 35px;
+    overflow: hidden;
+}
+.lang_count select{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    padding: 0 15px 0 0;
+    text-transform: uppercase;
+    margin-right: -15px;
+    height: 20px;
+    font-size: .75em;
+}
+.lang_count select option{
+    color: #000;
+}
+.lang_count:before, .lang_count:after{
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: 0;
+    width: 28px;
+    height: 21px;
+    background: url(../img/arrow.svg) no-repeat center center scroll;
+    background-size: 13px;
+    padding: 0;
+    box-sizing: border-box;
+    pointer-events: none;
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.lang_count:hover:before, .lang_count:hover:after{
+    transition: all 0.5s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+    -moz-transition: all 0.5s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+    -webkit-transition: all 0.5s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+    -o-transition: all 0.5s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+}
+.lang_count:before{
+    border: none;
+    background-position: -50px center;
+}
+.lang_count:hover:before{
+    background-position: center center;
+}
+.lang_count:hover:after{
+    background-position: 50px center;
 }
 aside .social{
     position: absolute;
@@ -318,6 +390,7 @@ aside .slogan:before{
     background: url(../img/logo_vertical.png) no-repeat center center scroll transparent;
     background-size:60%;
     margin: auto;
+    position: relative;
 }
 .carousel_arrows{
     position: absolute;
@@ -465,8 +538,6 @@ button.slick-prev:hover{
 .Specialization{
     padding-left:45px;
 }
-
-
 /*-------------------------------------------------------
    Section three
 -------------------------------------------------------*/
@@ -487,7 +558,7 @@ button.slick-prev:hover{
 }
 .proj_title{
     position: absolute;
-    z-index: 10;
+    z-index: 7;
     left: 20px;
     top: 20px;
     text-transform: uppercase;
@@ -659,6 +730,7 @@ button.slick-prev:hover{
     padding: 0 20% 0 40px;
     display: table-cell;
     vertical-align: middle;
+    position: relative;
 }
 .form_btn{
     float: right;
@@ -692,6 +764,7 @@ button.slick-prev:hover{
     width: 40%;
     display: inline-block;
     margin: 0 2%;
+    position: relative;
 }
 .links_list li a{
     display: inline-block;
@@ -710,6 +783,11 @@ button.slick-prev:hover{
 .fifth_sec .social a svg{
     width: 16px;
     height: 16px;
+}
+.fifth_sec .lang_count{
+    top: auto;
+    bottom: 35px;
+    right: 35px;
 }
 /*-------------------------------------------------------
    footer

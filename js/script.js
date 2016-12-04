@@ -1,4 +1,6 @@
 (function(window,$){
+    //refresh page when window is resized
+    window.onresize = function(){ location.reload(); };
 
     // wait for the document ready
     $(document).ready(function() {
@@ -72,7 +74,7 @@
         $slickElement.removeClass('hidden');
 
         $slickElement.slick({
-            //lazyLoad: 'ondemand',
+            lazyLoad: 'ondemand',
             autoplay: true,
             fade: true,
             speed:900,
@@ -145,7 +147,7 @@
             layoutMode: 'fitRows'
         });
 
-// filter functions
+        // filter functions
         var filterFns = {
             // show if number is greater than 50
             numberGreaterThan50: function( itemElem ) {
@@ -159,7 +161,7 @@
             }
         };
 
-// bind filter button click
+        // bind filter button click
         var filtersElem = document.querySelector('.filters-button-group');
         filtersElem.addEventListener( 'click', function( event ) {
             // only work with buttons
@@ -171,7 +173,7 @@
             filterValue = filterFns[ filterValue ] || filterValue;
             iso.arrange({ filter: filterValue });
         });
-// change is-checked class on buttons
+        // change is-checked class on buttons
         var buttonGroups = document.querySelectorAll('.button-group');
         for ( var j=0, len = buttonGroups.length; j < len; j++ ) {
             var buttonGroup = buttonGroups[j];
@@ -189,13 +191,6 @@
             });
         }
 
-
-
-
-        // Apply on desktop only not mobile (no heavy animation on mobile)
-        if ( !/Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)  &&  $(window).width() >= 768) {
-
-        }
 
 
     });
