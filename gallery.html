@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>jQuery lightGallery demo</title>
+        <link href="css/lightgallery.css" rel="stylesheet">
+
+    </head>
+    <body class="home">
+
+        <ul id="lightgallery" class="gallery_1">
+            <li data-src="img/projects/project_1/1.jpg" data-sub-html="<h4>Title Here</h4><p>Description here.</p>"></li>
+            <li data-src="img/projects/project_1/2.jpg" data-sub-html="<h4>Title Here</h4><p>Description here.</p>"></li>
+            <li data-src="img/projects/project_1/3.jpg" data-sub-html="<h4>Title Here</h4><p>Description here.</p>"></li>
+            <li data-src="img/projects/project_1/4.jpg" data-sub-html="<h4>Title Here</h4><p>Description here.</p>"></li>
+        </ul>
+        <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+        <script src="js/vendor/lightgallery.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $('.gallery_1').lightGallery();
+        });
+        </script>
+
+
+
+    </body>
+</html>

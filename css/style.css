@@ -576,7 +576,7 @@ button.slick-prev:hover{
     opacity: .5;
 }
 .project_unit:before{
-    content: attr(datat-category);
+    content: attr(data-category);
     position: absolute;
     bottom: 20px;
     left: 20px;
@@ -677,10 +677,31 @@ button.slick-prev:hover{
 .filters-button-group .button:hover, .filters-button-group .button.is-checked{
     color: #abc729;
 }
-
-/*-------------------------------------------------------
-   Section Four
--------------------------------------------------------*/
+.element-item{
+    -moz-transition: all 0.5s cubic-bezier(0.42, 0, 0, 0.995);
+    -o-transition: all 0.5s cubic-bezier(0.42, 0, 0, 0.995);
+    -webkit-transition: all 0.5s cubic-bezier(0.42, 0, 0, 0.995);
+    transition: all 0.5s cubic-bezier(0.42, 0, 0, 0.995);
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+}
+.scale-anm {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -o-transform: scale(0);
+}
+.projects_container{
+    min-height: 200px;
+}
+.gallery_unit{
+    /*display: none;*/
+}
+    /*-------------------------------------------------------
+       Section Four
+    -------------------------------------------------------*/
 .fourth_sec{
     height: auto;
 }
@@ -873,13 +894,16 @@ footer .social a:hover{
     }
     .sec.fifth_sec{
         height: auto;
-        padding: 40px 0 0 0;
+        padding: 0;
     }
     .contact_form{
         padding: 0;
     }
     .fifth_sec .cover_img{
         padding: 70px 40px;
+    }
+    .fifth_sec .lang_count{
+        bottom: 15px;
     }
     .links_list{
         margin: 10px 0 35px 0;

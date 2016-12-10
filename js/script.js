@@ -1,6 +1,6 @@
 (function(window,$){
     //refresh page when window is resized
-    window.onresize = function(){ location.reload(); };
+    //window.onresize = function(){ location.reload(); };
 
     // wait for the document ready
     $(document).ready(function() {
@@ -139,57 +139,34 @@
 
 
 
-        //isotop projects filtering
-        //========================================
-        // init Isotope
-        var iso = new Isotope( '.grid', {
-            itemSelector: '.element-item',
-            layoutMode: 'fitRows'
+        // Filter projects according to categories
+        var selectedClass = "";
+        $(".filters-button-group .button").click(function(){
+            $(".filters-button-group .button").removeClass('is-checked');
+            $(this).addClass("is-checked");
+            selectedClass = $(this).attr("data-filter");
+            $(".projects_container").fadeTo(100, 0.1);
+            $(".projects_container div").fadeOut().addClass('scale-anm');
+            setTimeout(function() {
+                $("."+selectedClass).fadeIn().removeClass('scale-anm');
+                $(".projects_container").fadeTo(300, 1);
+            }, 500);
+
         });
 
-        // filter functions
-        var filterFns = {
-            // show if number is greater than 50
-            numberGreaterThan50: function( itemElem ) {
-                var number = itemElem.querySelector('.number').textContent;
-                return parseInt( number, 10 ) > 50;
-            },
-            // show if name ends with -ium
-            ium: function( itemElem ) {
-                var name = itemElem.querySelector('.name').textContent;
-                return name.match( /ium$/ );
-            }
-        };
 
-        // bind filter button click
-        var filtersElem = document.querySelector('.filters-button-group');
-        filtersElem.addEventListener( 'click', function( event ) {
-            // only work with buttons
-            if ( !matchesSelector( event.target, 'button' ) ) {
-                return;
-            }
-            var filterValue = event.target.getAttribute('data-filter');
-            // use matching filter function
-            filterValue = filterFns[ filterValue ] || filterValue;
-            iso.arrange({ filter: filterValue });
-        });
-        // change is-checked class on buttons
-        var buttonGroups = document.querySelectorAll('.button-group');
-        for ( var j=0, len = buttonGroups.length; j < len; j++ ) {
-            var buttonGroup = buttonGroups[j];
-            radioButtonGroup( buttonGroup );
-        }
-
-        function radioButtonGroup( buttonGroup ) {
-            buttonGroup.addEventListener( 'click', function( event ) {
-                // only work with buttons
-                if ( !matchesSelector( event.target, 'button' ) ) {
-                    return;
-                }
-                buttonGroup.querySelector('.is-checked').classList.remove('is-checked');
-                event.target.classList.add('is-checked');
+        //// project gallery
+        $('.project_unit').on('click', function(e){
+            e.preventDefault();
+            var projNum = $(this).data('project');
+            var theGallery = $('.gallery_'+projNum);
+            var theSelector =  theGallery.find('li');
+            var $lg = theGallery.lightGallery({
+                selector:theSelector
             });
-        }
+            theSelector.trigger('click');
+            $lg.data('lightGallery').slide(0);
+        });
 
 
 

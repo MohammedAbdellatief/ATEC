@@ -39,7 +39,7 @@ nav > ul ul li:last-child{
   display: none;
 }
 
-.top-nav-expand{ background-color: rgba(0,0,0,.2);}
+.top-nav-expand{ background-color: rgba(30,30,30,.9);}
 .top-nav-expand nav a{ padding: 20px 0;}
 .top-nav-expand .horiz_logo{ left: 0; opacity: 1}
 .top-nav-collapse{ visibility: hidden;opacity: 0; z-index: -1;}
