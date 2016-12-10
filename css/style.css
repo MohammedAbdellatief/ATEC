@@ -914,5 +914,8 @@ footer .social a:hover{
         right: 0;
         text-align: center;
     }
+    .lg-toolbar{
+        top: 60px !important;
+    }
 
 }
